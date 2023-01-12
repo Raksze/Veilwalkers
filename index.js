@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const mysql = require('mysql2');
+//const mysql = require('mysql2');
 const hbs = require('hbs');
 const path = require('path');
 const nodemailer = require('nodemailer');
@@ -22,18 +22,18 @@ app.set('views', path.join(__dirname, 'views'));
 hbs.registerPartials(path.join(__dirname, 'views/partials'));
 
 //Conexion a la DB
-const conexion = mysql.createConnection({
-    host: process.env.HOST,
-    user: process.env.USER,
-    password: process.env.PASSWORD,
-    database: process.env.DATABASE,
-    port: process.env.DBPORT
-})
+//    const conexion = mysql.createConnection({
+//    host: process.env.HOST,
+//    user: process.env.USER,
+//    password: process.env.PASSWORD,
+//    database: process.env.DATABASE,
+//    port: process.env.DBPORT
+//})
 
-conexion.connect((error) =>{
-    if(error) throw error;
-    console.log('Conectado a la base de datos: ' + process.env.DATABASE);
-})
+//conexion.connect((error) =>{
+//    if(error) throw error;
+//    console.log('Conectado a la base de datos: ' + process.env.DATABASE);
+//})
 
 //Rutas de la aplicación
 //landing page
@@ -98,13 +98,13 @@ let datos = {
     email: email
 }
 
-let sql = "insert into email set ?"
+//let sql = "insert into email set ?"
 
-conexion.query(sql, datos,  function(error){
-    if (error) throw error;
-    console.log('1 registro insertado');
-    envioMail().catch(console.error);
-})
+//conexion.query(sql, datos,  function(error){
+//    if (error) throw error;
+//    console.log('1 registro insertado');
+//    envioMail().catch(console.error);
+//})
 
 res.render('thankyou');
 })
@@ -143,13 +143,13 @@ app.post('/betasub', (req, res) =>{
         email: email
     }
     
-    let sql = "insert into beta set ?"
+    //let sql = "insert into beta set ?"
     
-    conexion.query(sql, datos,  function(error){
-        if (error) throw error;
-        console.log('1 registro insertado');
-        envioMail().catch(console.error);
-    })
+    //conexion.query(sql, datos,  function(error){
+    //    if (error) throw error;
+    //    console.log('1 registro insertado');
+    //    envioMail().catch(console.error);
+    //})
     
     res.render('betasub');
     })
