@@ -1,0 +1,39 @@
+{{! separador}}
+<div class="d-flex justify-content-center m-5">
+<img src="img/separador.png" width="15%">
+</div>
+
+{{! banner}}
+<div class="d-flex justify-content-center">
+<img src="img/titulowhite.png" width="30%">
+</div>
+
+{{! separador}}
+<div class="d-flex justify-content-center m-5">
+<img src="img/separador2.png" width="30%">
+</div>
+
+{{! subscripción a la beta}}
+<div class="container text-light mt-5">
+    <div class="d-flex justify-content-center mb-3">
+        <h2> ¿Quieres unirte a nuestra beta? </h2>
+    </div>
+
+    <form action="/betasub" method="post">
+    <div class="row">
+        <div class="col-3 mb-3">
+            <label for="nombre" class="form-label d-flex justify-content-center">Nombre</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" required>
+        </div>
+        <div class="col-9 mb-3">
+            <label for="email" class="form-label d-flex justify-content-center">E-mail</label>
+            <input type="text" class="form-control" id="email" name="email" required>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <button type="submit" class="btn btn-dark">Suscribirse</button>
+    </div>
+
+    </form>
+</div>
